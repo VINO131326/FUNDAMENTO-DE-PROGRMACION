@@ -1,0 +1,20 @@
+def calcular_descuento(monto_total, porcentaje_descuento=10):
+    """
+    Calcula el monto de descuento y el total a pagar después del descuento.
+    :param monto_total: Monto total de la compra.
+    :param porcentaje_descuento: Porcentaje de descuento (por defecto 10%).
+    :return: Tupla con el monto del descuento y el total a pagar.
+    """
+    descuento = (monto_total * porcentaje_descuento) / 100
+    total_pagar = monto_total - descuento
+    return descuento, total_pagar
+
+# Llamadas a la función
+monto1 = 100
+monto2 = 200
+descuento1, total1 = calcular_descuento(monto1)
+descuento2, total2 = calcular_descuento(monto2, 15)
+
+# Mostrar resultados
+print(f"Compra de ${monto1}: Descuento ${descuento1:.2f}, Total a pagar: ${total1:.2f}")
+print(f"Compra de ${monto2} con 15% descuento: Descuento ${descuento2:.2f}, Total a pagar: ${total2:.2f}")
