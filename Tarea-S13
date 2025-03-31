@@ -1,0 +1,32 @@
+import random
+
+def calcular_promedio_temperaturas(datos_temperaturas):
+    """
+    Calcula el promedio de temperaturas por ciudad.
+    :param datos_temperaturas: Lista 3D con temperaturas [ciudad][semana][día].
+    :return: Diccionario con el promedio de temperatura por ciudad.
+    """
+    promedios = {}
+    for i, ciudad in enumerate(ciudades):
+        total_temp = 0
+        total_dias = 0
+        for semana in datos_temperaturas[i]:
+            total_temp += sum(semana)
+            total_dias += len(semana)
+        promedios[ciudad] = total_temp / total_dias
+    return promedios
+
+# Definir los parámetros de la matriz
+ciudades = ["Quito", "Guayaquil", "Cuenca"]
+dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
+semanas = 4  # Número de semanas
+
+# Generar matriz 3D con temperaturas aleatorias entre 10 y 30 grados
+matriz_temperaturas = [[[random.randint(10, 30) for _ in dias] for _ in range(semanas)] for _ in ciudades]
+
+# Calcular los promedios
+temperaturas_promedio = calcular_promedio_temperaturas(matriz_temperaturas)
+
+# Imprimir los resultados
+for ciudad, promedio in temperaturas_promedio.items():
+    print(f"Temperatura promedio en {ciudad}: {promedio:.2f}°C")
