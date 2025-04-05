@@ -1,0 +1,35 @@
+# Trabajo con Archivos de Texto en Python
+# Autor: Marcos Delgado
+# Universidad Estatal Amazónica - Primer semestre de Tecnología de la Información
+
+# ------------------------------
+# ESCRITURA DE ARCHIVO DE TEXTO
+# ------------------------------
+
+# Abrimos (o creamos) el archivo 'my_notes.txt' en modo escritura
+archivo = open("my_notes.txt", "w")
+
+# Escribimos tres líneas de notas personales
+archivo.write("1. Estudiar para el examen final de Fundamentos de Programación.\n")
+archivo.write("2. Repasar estructuras condicionales y bucles en Python.\n")
+archivo.write("3. Subir todas las tareas al repositorio de GitHub.\n")
+
+# Cerramos el archivo después de escribir
+archivo.close()
+
+# ------------------------------
+# LECTURA DE ARCHIVO DE TEXTO
+# ------------------------------
+
+# Abrimos el archivo en modo lectura
+archivo = open("my_notes.txt", "r")
+
+print("Contenido del archivo línea por línea:")
+# Leemos y mostramos cada línea usando readline()
+linea = archivo.readline()
+while linea:
+    print(linea.strip())  # Eliminamos el salto de línea al final
+    linea = archivo.readline()
+
+# Cerramos el archivo después de leer
+archivo.close()
